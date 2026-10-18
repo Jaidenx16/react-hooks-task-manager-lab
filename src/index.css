@@ -1,4 +1,8 @@
 /* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f9;
@@ -7,7 +11,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#root {
+  width: 100%;
+  max-width: 440px;
 }
 
 .container {
@@ -15,7 +25,7 @@ body {
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  width: 100%;
   text-align: center;
 }
 
@@ -59,6 +69,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
   padding: 10px;
   margin: 5px 0;
   background: #fff;
@@ -66,12 +77,22 @@ li {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.completed {
-  text-decoration: line-through;
-  color: gray;
+li span {
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+[role="alert"] {
+  color: #a11b1b;
 }
 
 .complete-btn {
+  flex-shrink: 0;
   background-color: #007bff;
   color: white;
   padding: 5px 10px;
